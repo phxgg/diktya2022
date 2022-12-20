@@ -6,8 +6,8 @@ import java.io.PrintWriter;
 import java.net.Socket;
 
 public class MessagingClient {
-    private String host;
-    private int port;
+    private final String host;
+    private final int port;
     private Socket clientSocket;
     private PrintWriter out;
     private BufferedReader in;
