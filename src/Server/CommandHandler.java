@@ -115,7 +115,7 @@ public class CommandHandler {
 
     private String showAccounts(Integer authToken) {
         if (!validateAuthToken(authToken)) {
-            return "Invalid auth token";
+            return "Invalid Auth Token";
         }
 
         StringBuilder accounts = new StringBuilder();
@@ -131,7 +131,7 @@ public class CommandHandler {
 
     private String sendMessage(Integer authToken, String recipient, String message) {
         if (!validateAuthToken(authToken)) {
-            return "Invalid auth token";
+            return "Invalid Auth Token";
         }
 
         if (!validateUsername(recipient)) {
@@ -156,7 +156,7 @@ public class CommandHandler {
 
     private String showInbox(Integer authToken) {
         if (!validateAuthToken(authToken)) {
-            return "Invalid auth token";
+            return "Invalid Auth Token";
         }
 
         Account account = getAccountByAuthToken(authToken);
@@ -175,7 +175,7 @@ public class CommandHandler {
 
     private String readMessage(Integer authToken, int messageId) {
         if (!validateAuthToken(authToken)) {
-            return "Invalid auth token";
+            return "Invalid Auth Token";
         }
 
         Account account = getAccountByAuthToken(authToken);
@@ -187,13 +187,13 @@ public class CommandHandler {
 
             return String.format("(%s) %s<NL>", message.getSender(), message.getBody());
         } catch (IndexOutOfBoundsException e) {
-            return "Server.Message ID does not exist";
+            return "Message ID does not exist";
         }
     }
 
     private String deleteMessage(Integer authToken, int messageId) {
         if (!validateAuthToken(authToken)) {
-            return "Invalid auth token";
+            return "Invalid Auth Token";
         }
 
         Account account = getAccountByAuthToken(authToken);
@@ -203,7 +203,7 @@ public class CommandHandler {
             account.getMessageBox().remove(messageId);
             return "OK";
         } catch (IndexOutOfBoundsException e) {
-            return "Server.Message does not exist";
+            return "Message does not exist";
         }
     }
 }
