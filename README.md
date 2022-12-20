@@ -9,5 +9,5 @@ Used OpenJDK 18.
 
 ## Run
 
-1. `java -jar Server.jar`
+1. `java -jar Server.jar <port>`
 2. `java -jar Client.jar <host> <port> <command> <args>`
